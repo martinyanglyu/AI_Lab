@@ -1,0 +1,5 @@
+FROM aibiologist/imc_sc:v1
+
+# Install StarDist + CSBDeep into the tf29 conda environment
+# This eliminates the ~30s pip install on every run
+RUN /bin/bash -c "source activate tf29 && pip install --no-cache-dir stardist csbdeep"
